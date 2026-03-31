@@ -1,0 +1,29 @@
+{
+  "name": "lambda-clean_archi_basic_template",
+  "version": "0.1.0",
+  "main": "bin/export.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:lambda": "dotnet clean src/MyCleanArchBasicTemplateLambda.csproj -c Release && rm -f ./output.zip && dotnet lambda package --project-location ./src -o ./output.zip --function-architecture arm64",
+    "deploy": "cdk deploy --require-approval never --method direct",
+    "predeploy": "pnpm build:lambda",
+    "swap": "cdk deploy --fast",
+    "preswap": "pnpm build:lambda",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/jest": "^30",
+    "@types/node": "^24.10.1",
+    "jest": "^30",
+    "ts-jest": "^29",
+    "aws-cdk": "2.1114.1",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.244.0",
+    "constructs": "^10.5.0"
+  }
+}

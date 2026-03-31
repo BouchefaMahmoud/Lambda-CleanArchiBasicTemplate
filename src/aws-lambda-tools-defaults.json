@@ -1,0 +1,11 @@
+{
+  "Information": [
+    "Defaults for Amazon.Lambda.Tools (dotnet lambda package / deploy). Must match CDK: Graviton = arm64."
+  ],
+  "profile": "",
+  "region": "",
+  "configuration": "Release",
+  "function-runtime": "dotnet10",
+  "function-architecture": "arm64",
+  "function-handler": "MyCleanArchBasicTemplateLambda::MyCleanArchBasicTemplateLambda.Function::FunctionHandler"
+}
